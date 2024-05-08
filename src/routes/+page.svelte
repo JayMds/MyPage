@@ -13,6 +13,8 @@
   import NotEditable from '$lib/components/NotEditable.svelte';
   import { currentUser, isEditing } from '$lib/stores.js';
   import WebsiteHeader from '$lib/components/WebsiteHeader.svelte';
+  import {ROUTES} from "$lib/constants.js";
+  import {goto} from "$app/navigation";
 
   export let data;
 
@@ -50,9 +52,9 @@
   let title,
     testimonials,
     faqs,
-    introStep1,
-    introStep2,
-    introStep3,
+    introCV,
+    introMSQ,
+    introREAL,
     // introStep4,
     bioTitle,
     bioPicture,
@@ -67,7 +69,7 @@
     // Make a deep copy
     // testimonials = JSON.parse(JSON.stringify(data.page?.testimonials || TESTIMONIALS_PLACEHOLDER));
 
-    introStep1 = JSON.parse(
+    introCV = JSON.parse(
       JSON.stringify(
         data.page?.introStep1 || {
           label: 'Curriculum Vitae',
@@ -76,7 +78,7 @@
         }
       )
     );
-    introStep2 = JSON.parse(
+    introMSQ = JSON.parse(
       JSON.stringify(
         data.page?.introStep2 || {
           label: 'Musique',
@@ -85,7 +87,7 @@
         }
       )
     );
-    introStep3 = JSON.parse(
+    introREAL = JSON.parse(
       JSON.stringify(
         data.page?.introStep3 || {
           label: 'Réalisations',
@@ -158,9 +160,9 @@
             title,
             faqs,
             testimonials,
-            introStep1,
-            introStep2,
-            introStep3,
+            introStep1: introCV,
+            introStep2: introMSQ,
+            introStep3: introREAL,
             // introStep4,
             bioPicture,
             bioTitle,
@@ -174,6 +176,7 @@
       alert('There was an error. Please try again.');
     }
   }
+
 
   initOrReset();
 </script>
@@ -223,9 +226,9 @@
 <!--        <div class="w-4 h-4 rounded-full bg-gray-900 absolute -top-1 -left-[6px]" />-->
 <!--      </div>-->
       <div class="z-10">
-        <IntroStep bind:intro={introStep1} />
-        <IntroStep bind:intro={introStep2} />
-        <IntroStep bind:intro={introStep3} />
+        <IntroStep hardLink={ROUTES.cv} bind:intro={introCV} />
+        <IntroStep hardLink={ROUTES.musique} bind:intro={introMSQ} />
+        <IntroStep hardLink={ROUTES.realisations} bind:intro={introREAL} />
 <!--        <IntroStep bind:intro={introStep4} />-->
       </div>
     </div>
@@ -242,8 +245,8 @@
         type="button"
         on:click={() =>
           document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' })}
-        >Create an editable website</PrimaryButton
-      >
+        >Prenez contact avec moi
+      </PrimaryButton>
     </div>
   </div>
 </div>

@@ -64,7 +64,9 @@
           </svg>
         </button>
         <a class="mr-4 font-medium px-2 py-1 rounded-md hover:text-black" href="/"> About </a>
+        <a class="mr-4 font-medium px-2 py-1 rounded-md hover:text-black" href="/cv"> CV </a>
         <a class="mr-4 font-medium px-2 py-1 rounded-md hover:text-black" href="/blog"> Blog </a>
+        <a class="mr-4 font-medium px-2 py-1 rounded-md hover:text-black" href="/musique"> Musique </a>
         <a class="mr-4 font-medium px-2 py-1 rounded-md hover:text-black" href="/#contact">
           Contact
         </a>

@@ -1,11 +1,16 @@
 <script>
   import PlainText from './PlainText.svelte';
   import RichText from './RichText.svelte';
+  import {goto} from "$app/navigation";
 
   export let intro;
+  export let hardLink;
+  function navLink() {
+    hardLink? goto(hardLink): null
+  }
 </script>
 
-<div class="my-12">
+<div class="my-12" role="button" on:click={navLink} tabindex="0">
   <div class="bg-white relative py-8 mt-20 mb-20">
     <div class="font-bold text-center text-sm sm:text-base">
       <PlainText bind:content={intro.label} />
