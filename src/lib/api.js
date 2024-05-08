@@ -218,10 +218,6 @@ export async function deleteArticle(slug, currentUser) {
  * In this minimal setup there is only one user, the website admin.
  * If you want to support multiple users/authors you want to return the current user record here.
  */
-/**
- * In this minimal setup there is only one user, the website admin.
- * If you want to support multiple users/authors you want to return the current user record here.
- */
 export async function getCurrentUser(session_id) {
   const stmt = db.prepare(
     'SELECT session_id, expires FROM sessions WHERE session_id = ? AND expires > ?'

@@ -19,10 +19,10 @@
   // --------------------------------------------------------------------------
   // DEFAULT PAGE CONTENT - AJDUST TO YOUR NEEDS
   // --------------------------------------------------------------------------
-  const EMAIL = 'michael@letsken.com';
+  const EMAIL = 'musiqmetavers@gmail.com';
 
   // Can contain spaces but must not contain the + sign
-  const PHONE_NUMBER = '43 664 1533015';
+  const PHONE_NUMBER = '33612993487';
 
   const FAQS_PLACEHOLDER = `
 		<h2>Question 1</h2>
@@ -31,17 +31,19 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mi lectus, pellentesque nec urna eget, pretium dictum arcu. In rutrum pretium leo, id efficitur nisl ullamcorper sit amet.</p>
 	`;
 
-  const BIO_PLACEHOLDER = `
-		<p>Modern tools, such as Svelte and Tailwind allow you to easily hand-craft fast and beautiful websites. What’s missing is the ability to <strong>make edits without changing the source code</strong>.</p>
-		<p>With this <a href="https://github.com/michael/editable-website">open-source website template</a>, I want to fill that gap.</p>
-    <p>If you have questions or need any help, contact me.</p>
+  const BIO_PICTURE = '/images/cjmusiq.webp'
+  const BIO_TITLE = `Bonjour, c'est Jean Claude 👋 je réalise des sites web et du conseil pour vos réalisations`
+  const BIO_BODY = `
+		<p>  <strong> </strong>.</p>
+		<p> <a href="https://github.com/jaysmds"> GitHub </a> </p>
+    <p>Si vous avez des questions ou besoin de quoi que ce soit, contactez-moi.</p>
 	`;
 
   const TESTIMONIALS_PLACEHOLDER = [
     {
-      text: '“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mi lectus, pellentesque nec urna eget, pretium dictum arcu. In rutrum pretium leo, id efficitur nisl ullamcorper sit amet.”',
+      text: '“Il va falloir trouver quoi mettre ici”',
       image: '/images/person-placeholder.jpg',
-      name: 'Jane Doe · jane-doe.org'
+      name: 'Jay · Jinkuro'
     }
   ];
 
@@ -51,7 +53,7 @@
     introStep1,
     introStep2,
     introStep3,
-    introStep4,
+    // introStep4,
     bioTitle,
     bioPicture,
     bio,
@@ -59,51 +61,51 @@
 
   function initOrReset() {
     $currentUser = data.currentUser;
-    title = data.page?.title || 'Untitled Website';
+    title = data.page?.title || 'Mendes Da Veiga Jean Claude';
     faqs = data.page?.faqs || FAQS_PLACEHOLDER;
 
     // Make a deep copy
-    testimonials = JSON.parse(JSON.stringify(data.page?.testimonials || TESTIMONIALS_PLACEHOLDER));
+    // testimonials = JSON.parse(JSON.stringify(data.page?.testimonials || TESTIMONIALS_PLACEHOLDER));
 
     introStep1 = JSON.parse(
       JSON.stringify(
         data.page?.introStep1 || {
-          label: 'THE PROBLEM',
-          title: 'The problem statement',
-          description: 'Describe the problem you are solving in a short sentence.'
+          label: 'Curriculum Vitae',
+          title: 'Mon parcours professionnel',
+          description: 'Restauration - Développement Web'
         }
       )
     );
     introStep2 = JSON.parse(
       JSON.stringify(
         data.page?.introStep2 || {
-          label: 'THE DREAM',
-          title: 'This is how it should be.',
-          description: 'Describe why it should be like that.'
+          label: 'Musique',
+          title: 'Mes références musicales',
+          description: 'De 2pac à Jacques Brel en passant par Trust'
         }
       )
     );
     introStep3 = JSON.parse(
       JSON.stringify(
         data.page?.introStep3 || {
-          label: 'THE REALITY',
-          title: 'A statement why it is not that easy.',
-          description: 'Describe the reality a bit more.'
+          label: 'Réalisations',
+          title: 'Mes Réalisations',
+          description: 'Professionelles, projets, hobbys'
         }
       )
     );
-    introStep4 = JSON.parse(
-      JSON.stringify(
-        data.page?.introStep4 || {
-          label: 'THE PROMISE',
-          title: 'Still the solution is worth it.',
-          description: 'And why this is, should be described here.'
-        }
-      )
-    );
-    bioPicture = data.page?.bioPicture || '/images/person-placeholder.jpg';
-    bioTitle = data.page?.bioTitle || "Hi, I'm Michael — I want your website to be editable.";
-    bio = data.page?.bio || BIO_PLACEHOLDER;
+    // introStep4 = JSON.parse(
+    //   JSON.stringify(
+    //     data.page?.introStep4 || {
+    //       label: 'Services',
+    //       title: 'Demander une prestation',
+    //       description: 'Web, Musique, Restauration, je suis ouvert à toute nouvelles expèriences'
+    //     }
+    //   )
+    // );
+    bioPicture = data.page?.bioPicture || BIO_PICTURE;
+    bioTitle = data.page?.bioTitle || BIO_TITLE;
+    bio = data.page?.bio || BIO_BODY;
     $isEditing = false;
   }
 
@@ -159,7 +161,7 @@
             introStep1,
             introStep2,
             introStep3,
-            introStep4,
+            // introStep4,
             bioPicture,
             bioTitle,
             bio
@@ -178,8 +180,8 @@
 
 <svelte:head>
   <title>Make your website editable</title>
-  <meta name="description" content="Make changes to your website while browsing it." />
-  <link rel="alternate" hreflang="en" href="https://editable.website" />
+  <meta name="description" content="Variétées à mon propos " />
+  <link rel="alternate" hreflang="fr" href="https://editable.website" />
   <link rel="canonical" href="https://editable.website" />
 </svelte:head>
 
@@ -205,26 +207,26 @@
     <h1 class="text-4xl md:text-7xl font-bold text-center">
       <PlainText bind:content={title} />
     </h1>
-    <NotEditable>
-      <div class="text-center pt-8 pb-4 bounce text-xl">↓</div>
-      <div class="text-center">
-        <PrimaryButton size="lg" type="button" on:click={toggleEdit}>Edit</PrimaryButton>
-      </div>
-    </NotEditable>
+<!--    <NotEditable>-->
+<!--      <div class="text-center pt-8 pb-4 bounce text-xl">↓</div>-->
+<!--      <div class="text-center">-->
+<!--        <PrimaryButton size="lg" type="button" on:click={toggleEdit}>Edit</PrimaryButton>-->
+<!--      </div>-->
+<!--    </NotEditable>-->
   </div>
 </div>
 
-<div class="pt-12 md:pt-24 border-gray-100 border-b-2">
+<div class="pt-5 md:pt-5 border-gray-100 border-b-2">
   <div class="max-w-screen-md mx-auto px-6">
     <div class="relative">
-      <div class="w-1 bg-gray-900 absolute inset-0 -top-8 bottom-12 mx-auto z-0">
-        <div class="w-4 h-4 rounded-full bg-gray-900 absolute -top-1 -left-[6px]" />
-      </div>
+<!--      <div class="w-1 bg-gray-900 absolute inset-0 -top-8 bottom-12 mx-auto z-0">-->
+<!--        <div class="w-4 h-4 rounded-full bg-gray-900 absolute -top-1 -left-[6px]" />-->
+<!--      </div>-->
       <div class="z-10">
         <IntroStep bind:intro={introStep1} />
         <IntroStep bind:intro={introStep2} />
         <IntroStep bind:intro={introStep3} />
-        <IntroStep bind:intro={introStep4} />
+<!--        <IntroStep bind:intro={introStep4} />-->
       </div>
     </div>
     <div class="relative h-14">
@@ -250,16 +252,19 @@
   <div class="max-w-screen-md mx-auto px-6">
     <div class="font-bold text-sm sm:text-base py-12 sm:pt-24 pb-8">WHAT PEOPLE SAY</div>
   </div>
-  {#each testimonials as testimonial, i}
-    <Testimonial
-      bind:testimonial
-      firstEntry={i === 0}
-      lastEntry={i === testimonials.length - 1}
-      on:delete={() => deleteTestimonial(i)}
-      on:up={() => moveTestimonial(i, 'up')}
-      on:down={() => moveTestimonial(i, 'down')}
-    />
-  {/each}
+  {#if testimonials}
+    {#each testimonials as testimonial, i}
+      <Testimonial
+              bind:testimonial
+              firstEntry={i === 0}
+              lastEntry={i === testimonials.length - 1}
+              on:delete={() => deleteTestimonial(i)}
+              on:up={() => moveTestimonial(i, 'up')}
+              on:down={() => moveTestimonial(i, 'down')}
+      />
+    {/each}
+  {/if}
+
 
   {#if $isEditing}
     <div class="text-center pb-12 border-b border-gray-100">
