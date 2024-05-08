@@ -5,6 +5,7 @@ const BLOG = '/blog'
 const MUSIQUE = '/musique'
 const CONTACT = '/#contact'
 const IMPRINT = '/imprint'
+const REALISATIONS = '/realisations'
 
 export const SHORTCUTS = [
   { name: 'About', url: ABOUT },
@@ -13,7 +14,8 @@ export const SHORTCUTS = [
   { name: 'Musique', url: MUSIQUE },
   { name: 'Contact', url: CONTACT },
   { name: 'Imprint', url: IMPRINT },
-  { name: 'Login', url: LOGIN }
+  { name: 'Login', url: LOGIN },
+  { name: 'Realisations', url: REALISATIONS }
 ];
 
 export const ROUTES = {
@@ -23,5 +25,6 @@ export const ROUTES = {
   musique: MUSIQUE,
   contact: CONTACT,
   about: ABOUT,
-  imprint: IMPRINT
+  imprint: IMPRINT,
+  realisations: REALISATIONS
 }

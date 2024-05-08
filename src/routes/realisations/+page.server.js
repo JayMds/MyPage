@@ -3,7 +3,7 @@ import {ROUTES} from "$lib/constants.js";
 
 export async function load({ locals }) {
   const currentUser = locals.user;
-  const page = await getPage(ROUTES.imprint);
+  const page = await getPage(ROUTES.realisations);
   return {
     currentUser,
     page

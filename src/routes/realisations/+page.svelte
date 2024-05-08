@@ -36,6 +36,7 @@
             ]
                 .map(text => `<p>${text}</p>`)
                 .join('\n');
+        $isEditing = false
     }
 
     initOrReset();

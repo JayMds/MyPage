@@ -14,7 +14,6 @@
   import { currentUser, isEditing } from '$lib/stores.js';
   import WebsiteHeader from '$lib/components/WebsiteHeader.svelte';
   import {ROUTES} from "$lib/constants.js";
-  import {goto} from "$app/navigation";
 
   export let data;
 
