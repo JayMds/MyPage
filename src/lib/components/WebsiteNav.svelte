@@ -41,7 +41,7 @@
 >
   <div class="max-w-xs mx-auto py-4">
     <NotEditable>
-      <div class="flex items-center relative">
+      <div class="flex items-center w-max relative">
         <div class="flex-1" />
         <button
           title="Search"
