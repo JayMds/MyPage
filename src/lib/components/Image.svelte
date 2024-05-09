@@ -1,6 +1,5 @@
 <script>
   import { isEditing } from '$lib/stores.js';
-
   export let src;
   export let alt;
   export let uploadPrompt = undefined;

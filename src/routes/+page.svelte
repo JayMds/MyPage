@@ -13,17 +13,17 @@
   import NotEditable from '$lib/components/NotEditable.svelte';
   import { currentUser, isEditing } from '$lib/stores.js';
   import WebsiteHeader from '$lib/components/WebsiteHeader.svelte';
-  import {ROUTES} from "$lib/constants.js";
+  import {OWNER_DATA, ROUTES} from "$lib/constants.js";
 
   export let data;
 
   // --------------------------------------------------------------------------
   // DEFAULT PAGE CONTENT - AJDUST TO YOUR NEEDS
   // --------------------------------------------------------------------------
-  const EMAIL = 'musiqmetavers@gmail.com';
+  const EMAIL = OWNER_DATA.mail;
 
   // Can contain spaces but must not contain the + sign
-  const PHONE_NUMBER = '33612993487';
+  const PHONE_NUMBER = OWNER_DATA.tel;
 
   const FAQS_PLACEHOLDER = `
 		<h2>Question 1</h2>
@@ -33,7 +33,7 @@
 	`;
 
   const BIO_PICTURE = '/images/cjmusiq.webp'
-  const BIO_TITLE = `Bonjour, c'est Jean Claude 👋 je réalise des sites web et du conseil pour vos réalisations`
+  const BIO_TITLE = `Bienvenue 👋 je peux réaliser des sites web et vous conseiller pour vos réalisations`
   const BIO_BODY = `
 		<p>  <strong> </strong>.</p>
 		<p> <a href="https://github.com/jaysmds"> GitHub </a> </p>
@@ -111,7 +111,7 @@
   }
 
   // --------------------------------------------------------------------------
-  // Page logic
+  // Page logicimage
   // --------------------------------------------------------------------------
 
   function toggleEdit() {
@@ -231,13 +231,13 @@
 <!--        <IntroStep bind:intro={introStep4} />-->
       </div>
     </div>
-    <div class="relative h-14">
-      <div class="w-1 bg-gray-900 absolute inset-0 -top-16 bottom-12 mx-auto z-0">
-        <div
-          class="absolute -bottom-2 -left-[7px] h-0 w-0 border-x-[9px] border-x-transparent border-t-[10px] border-gray-900"
-        />
-      </div>
-    </div>
+<!--    <div class="relative h-14">-->
+<!--      <div class="w-1 bg-gray-900 absolute inset-0 -top-16 bottom-12 mx-auto z-0">-->
+<!--        <div-->
+<!--          class="absolute -bottom-2 -left-[7px] h-0 w-0 border-x-[9px] border-x-transparent border-t-[10px] border-gray-900"-->
+<!--        />-->
+<!--      </div>-->
+<!--    </div>-->
     <div class="text-center mb-32">
       <PrimaryButton
         size="lg"
@@ -299,7 +299,7 @@
           maxHeight="384"
           quality="0.8"
           bind:src={bioPicture}
-          alt="Michael Aufreiter"
+          alt="Photo Mendes Jean Claude"
         />
       </div>
 

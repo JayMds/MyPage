@@ -33,7 +33,7 @@ export const OWNER_DATA = {
   nom: 'Mendes Da Veiga',
   prenom: 'Jean Claude',
   mail: 'jean-mendes@live.fr',
-  tel: '33612993487',
+  tel: '0612993487',
   git: 'https://github.com/JayMds',
   linkedin: 'https://www.linkedin.com/in/jean-claudemds'
 }

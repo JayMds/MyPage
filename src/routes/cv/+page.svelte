@@ -4,11 +4,12 @@
     import RichText from '$lib/components/RichText.svelte';
     import LoginMenu from '$lib/components/LoginMenu.svelte';
     import PrimaryButton from '$lib/components/PrimaryButton.svelte';
-    import { fetchJSON } from '$lib/util';
-    import { currentUser, isEditing } from '$lib/stores.js';
     import WebsiteHeader from '$lib/components/WebsiteHeader.svelte';
-    import Resume from "$lib/components/cv/Resume.svelte";
+    import CvResume from "$lib/components/cv/CvResume.svelte";
+    import { currentUser, isEditing } from '$lib/stores.js';
     import {OWNER_DATA} from "$lib/constants.js";
+    import { fetchJSON } from '$lib/util';
+
     export let data;
     const PAGE_TITLE = 'Curriculum Vitae'
     let resume_section
@@ -48,8 +49,6 @@
         showUserMenu = false;
     }
 
-
-
     async function savePage() {
         if (!$currentUser) return alert('Sorry, you are not authorized.');
         try {
@@ -79,11 +78,11 @@
 
 <div class="py-12 sm:py-24">
     <div class="max-w-screen-md mx-auto px-6 md:text-xl">
-        <h1 class="text-4xl md:text-7xl font-bold pb-8">
+        <h1 class="text-center text-4xl md:text-7xl font-bold pb-8">
             <PlainText bind:content={title} />
         </h1>
         <div class="prose md:prose-xl pb-12 sm:pb-24">
-            <Resume bind:resume={resume_section}/>
+            <CvResume bind:resume={resume_section}/>
 
             <RichText multiLine bind:content={imprint} />
         </div>

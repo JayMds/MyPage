@@ -39,7 +39,7 @@
     !$isEditing ? 'sticky top-0' : ''
   )}
 >
-  <div class="max-w-xs mx-auto py-4">
+  <div class="w-max mx-auto py-4">
     <NotEditable>
       <div class="flex items-center w-max relative">
         <div class="flex-1" />
@@ -93,7 +93,7 @@
             </svg>
           </button>
         {/if}
-        <div class="flex-1" />
+<!--        <div class="flex-1" />-->
       </div>
     </NotEditable>
   </div>
