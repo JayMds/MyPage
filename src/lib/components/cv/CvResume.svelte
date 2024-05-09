@@ -7,7 +7,7 @@ let metier = "Concepteur Développeur d'Application"
 let resume_pic = '/images/resume_pic_400x450.webp'
 </script>
 
-<div class="flex flex-col items-center bg-black rounded-3xl p-8 space-x-5">
+<div class="flex flex-col items-center bg-black rounded-3xl p-8">
 
    <Image
            class="block bg-white rounded-3xl "
@@ -18,7 +18,7 @@ let resume_pic = '/images/resume_pic_400x450.webp'
            alt="Photo Mendes Jean Claude"
    />
 
-   <div class="text text-white text-center" >
+   <div class="text text-white text-center mb-[40px]" >
 
       <div class="font-extrabold text-5xl my-4">
          <PlainText bind:content={resume.nom} />
