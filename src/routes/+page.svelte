@@ -33,7 +33,7 @@
 	`;
 
   const BIO_PICTURE = '/images/cjmusiq.webp'
-  const BIO_TITLE = `Bienvenue 👋 je peux réaliser des sites web et vous conseiller pour vos réalisations`
+  const BIO_TITLE = `Bienvenue 👋 je peux réaliser vos sites web et vous conseiller pour vos réalisations`
   const BIO_BODY = `
 		<p>  <strong> </strong>.</p>
 		<p> <a href="https://github.com/jaysmds"> GitHub </a> </p>
