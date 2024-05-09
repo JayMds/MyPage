@@ -7,10 +7,11 @@
     import { fetchJSON } from '$lib/util';
     import { currentUser, isEditing } from '$lib/stores.js';
     import WebsiteHeader from '$lib/components/WebsiteHeader.svelte';
-
+    import Resume from "$lib/components/cv/Resume.svelte";
+    import {OWNER_DATA} from "$lib/constants.js";
     export let data;
     const PAGE_TITLE = 'Curriculum Vitae'
-
+    let resume_section
     let showUserMenu = false,
         title,
         imprint;
@@ -36,6 +37,7 @@
             ]
                 .map(text => `<p>${text}</p>`)
                 .join('\n');
+        resume_section = OWNER_DATA
         $isEditing = false
     }
 
@@ -45,6 +47,8 @@
         $isEditing = true;
         showUserMenu = false;
     }
+
+
 
     async function savePage() {
         if (!$currentUser) return alert('Sorry, you are not authorized.');
@@ -79,6 +83,8 @@
             <PlainText bind:content={title} />
         </h1>
         <div class="prose md:prose-xl pb-12 sm:pb-24">
+            <Resume bind:resume={resume_section}/>
+
             <RichText multiLine bind:content={imprint} />
         </div>
     </div>
