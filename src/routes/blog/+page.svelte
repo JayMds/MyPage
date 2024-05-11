@@ -21,10 +21,10 @@
 </svelte:head>
 
 <WebsiteHeader bind:showUserMenu>
-  <div class="w-full flex flex-col space-y-4 p-4 sm:p-6">
+<!--  <div class="w-full flex flex-col space-y-4 p-4 sm:p-6">-->
     <PrimaryButton type="button" on:click={() => goto('/blog/new')}>New blog post</PrimaryButton>
     <LoginMenu />
-  </div>
+<!--  </div>-->
 </WebsiteHeader>
 
 <div class="pb-8">

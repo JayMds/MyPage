@@ -7,26 +7,24 @@ let metier = "Concepteur Développeur d'Application"
 let resume_pic = '/images/resume_pic_400x450.webp'
 </script>
 
-<div class="flex flex-col items-center bg-black rounded-3xl p-8">
+<div class="flex flex-col items-center bg-black rounded-3xl w-[50%] p-8">
 
    <Image
-           class="block bg-white rounded-3xl "
-           maxWidth="384"
-           maxHeight="384"
+           class="block w-64 bg-white rounded-3xl "
            quality="1"
            bind:src={resume_pic}
-           alt="Photo Mendes Jean Claude"
+           alt="Photo cv Mendes Jean Claude"
    />
 
-   <div class="text text-white text-center mb-[40px]" >
+   <div class="text-white text-center mb-[40px]" >
 
-      <div class="font-extrabold text-5xl my-4">
+      <div class="font-extrabold text-3xl my-4">
          <PlainText bind:content={resume.nom} />
          <br>
          <PlainText bind:content={resume.prenom} />
       </div>
 
-      <div class="font-extrabold text-3xl my-4">
+      <div class="font-extrabold text-xl my-4">
          <PlainText bind:content={metier} />
       </div>
 

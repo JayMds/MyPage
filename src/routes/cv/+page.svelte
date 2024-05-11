@@ -9,6 +9,7 @@
     import { currentUser, isEditing } from '$lib/stores.js';
     import {OWNER_DATA} from "$lib/constants.js";
     import { fetchJSON } from '$lib/util';
+    import CvJobs from "$lib/components/cv/CvJobs.svelte";
 
     export let data;
     const PAGE_TITLE = 'Curriculum Vitae'
@@ -25,19 +26,19 @@
         $currentUser = data.currentUser;
         title = data.page?.title || PAGE_TITLE;
         imprint =
-            data.page?.imprint ||
-            [
-                ['Ken Experiences GmbH', 'Mozartstraße 56', '4020 Linz, Austria'].join('<br/>'),
-                [
-                    'Managing Director: DI Michael Aufreiter',
-                    'Register No: FN 408728x',
-                    'Court: Linz',
-                    'VAT ID: ATU68395257',
-                    'Nigo'
-                ].join('<br/>')
-            ]
-                .map(text => `<p>${text}</p>`)
-                .join('\n');
+            data.page?.imprint || ''
+            // [
+            //     ['Ken Experiences GmbH', 'Mozartstraße 56', '4020 Linz, Austria'].join('<br/>'),
+            //     [
+            //         'Managing Director: DI Michael Aufreiter',
+            //         'Register No: FN 408728x',
+            //         'Court: Linz',
+            //         'VAT ID: ATU68395257',
+            //         'Nigo'
+            //     ].join('<br/>')
+            // ]
+            //     .map(text => `<p>${text}</p>`)
+            //     .join('\n');
         resume_section = OWNER_DATA
         $isEditing = false
     }
@@ -77,14 +78,14 @@
 </WebsiteHeader>
 
 <div class="py-12 sm:py-24">
-    <div class="max-w-screen-md mx-auto px-6 md:text-xl">
+    <div class="v max-w-screen-md mx-auto px-6 md:text-xl">
         <h1 class="text-center text-4xl md:text-7xl font-bold pb-8">
             <PlainText bind:content={title} />
         </h1>
         <div class="prose md:prose-xl pb-12 sm:pb-24">
             <CvResume bind:resume={resume_section}/>
-
-            <RichText multiLine bind:content={imprint} />
+            <CvJobs />
+<!--            <RichText multiLine bind:content={imprint} />-->
         </div>
     </div>
 </div>
