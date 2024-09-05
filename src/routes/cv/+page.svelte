@@ -1,7 +1,6 @@
 <script>
     import Footer from '$lib/components/Footer.svelte';
     import PlainText from '$lib/components/PlainText.svelte';
-    import RichText from '$lib/components/RichText.svelte';
     import LoginMenu from '$lib/components/LoginMenu.svelte';
     import PrimaryButton from '$lib/components/PrimaryButton.svelte';
     import WebsiteHeader from '$lib/components/WebsiteHeader.svelte';
@@ -82,7 +81,8 @@
         <h1 class="text-center text-4xl md:text-7xl font-bold pb-8">
             <PlainText bind:content={title} />
         </h1>
-        <div class="prose md:prose-xl pb-12 sm:pb-24">
+<!--        <div class="prose md:prose-xl pb-12 sm:pb-24">-->
+        <div class="flex flex-row">
             <CvResume bind:resume={resume_section}/>
             <CvJobs />
 <!--            <RichText multiLine bind:content={imprint} />-->

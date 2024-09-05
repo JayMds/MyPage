@@ -193,32 +193,33 @@
 </WebsiteHeader>
 
 <div>
-  <div class="max-w-screen-md mx-auto px-6 pt-12 sm:pt-24">
-    <NotEditable>
-      <svg
-        class="pb-8 w-14 sm:w-24 mx-auto"
-        viewBox="0 0 200 200"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M164 110L64 163.768V200L164 147.059V110Z" fill="#111827" />
-        <path d="M136 66L36 119.768V156L136 103.059V66Z" fill="#111827" />
-        <path d="M164 0L64 53.7684V90L164 37.0588V0Z" fill="#111827" />
-      </svg>
-    </NotEditable>
-    <h1 class="text-4xl md:text-7xl font-bold text-center">
-      <PlainText bind:content={title} />
-    </h1>
-<!--    <NotEditable>-->
-<!--      <div class="text-center pt-8 pb-4 bounce text-xl">↓</div>-->
-<!--      <div class="text-center">-->
-<!--        <PrimaryButton size="lg" type="button" on:click={toggleEdit}>Edit</PrimaryButton>-->
-<!--      </div>-->
-<!--    </NotEditable>-->
+  <div class="max-w-screen-md mx-auto px-0 pt-0 sm:pt-10">
+
+    <div class="border rounded-xl shadow p-10 pb-20">
+
+      <NotEditable>
+        <svg
+                class="pb-8 w-14 sm:w-24 mx-auto"
+                viewBox="0 0 200 200"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M164 110L64 163.768V200L164 147.059V110Z" fill="#111827" />
+          <path d="M136 66L36 119.768V156L136 103.059V66Z" fill="#111827" />
+          <path d="M164 0L64 53.7684V90L164 37.0588V0Z" fill="#111827" />
+        </svg>
+      </NotEditable>
+
+      <h1 class="text-4xl md:text-7xl font-bold text-center">
+        <PlainText bind:content={title} />
+      </h1>
+
+    </div>
+
   </div>
 </div>
 
-<div class="pt-5 md:pt-5 border-gray-100 border-b-2">
+<div class="border-gray-100 border-b-2 pt-5 md:pt-5">
   <div class="max-w-screen-md mx-auto px-6">
     <div class="relative">
 <!--      <div class="w-1 bg-gray-900 absolute inset-0 -top-8 bottom-12 mx-auto z-0">-->
