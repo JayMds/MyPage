@@ -1,25 +1,38 @@
 <script>
-  import PlainText from './PlainText.svelte';
-  import RichText from './RichText.svelte';
-  import {goto} from "$app/navigation";
+    import * as Card from "$lib/components/ui/card";
+    import PlainText from './PlainText.svelte';
+    import RichText from './RichText.svelte';
+    import {goto} from "$app/navigation";
 
-  export let intro;
-  export let hardLink;
-  function navLink() {
-    hardLink? goto(hardLink): null
-  }
+    export let contenu;
+    export let hardLink;
+    function navLink() {
+        hardLink ? goto(hardLink) : null
+    }
 </script>
 
-<div class="my-12" role="button" on:click={navLink} tabindex="0">
-  <div class="bg-white relative py-8 mt-20 mb-20">
-    <div class="font-bold text-center text-sm sm:text-base">
-      <PlainText bind:content={intro.label} />
-    </div>
-    <div class="text-2xl md:text-5xl font-bold text-center pt-2">
-      <PlainText bind:content={intro.title} />
-    </div>
-    <div class="max-w-md mx-auto text-lg md:text-2xl text-center pt-2 md:pt-4">
-      <RichText bind:content={intro.description} />
-    </div>
-  </div>
-</div>
+<button on:click={navLink} tabindex="0" class="group transition-colors">
+    <Card.Root class="group-hover:shadow-2xl transition-shadow group-hover:animate-pulse ">
+<!--    Header    -->
+        <Card.Header>
+            <Card.Title class=" transition-colors">
+                <PlainText bind:content={contenu.label} />
+            </Card.Title>
+            <Card.Description>
+                <PlainText bind:content={contenu.title} />
+            </Card.Description>
+        </Card.Header>
+<!--    Contenu    -->
+        <Card.Content>
+            <div class="relative mb-8 rounded-md">
+                <slot/>
+            </div>
+            <RichText bind:content={contenu.description} />
+        </Card.Content>
+<!--    Footer    -->
+        <Card.Footer>
+        </Card.Footer>
+
+    </Card.Root>
+</button>
+

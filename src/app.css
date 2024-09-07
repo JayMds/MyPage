@@ -153,3 +153,9 @@
     pointer-events: none;
   }
 }
+
+@layer components {
+  .intro-card-image {
+    @apply mx-auto block rounded-md w-1/3 h-1/3 md:w-full md:h-full;
+  }
+}

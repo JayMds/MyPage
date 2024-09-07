@@ -1,4 +1,5 @@
 <script>
+  import * as Card from "$lib/components/ui/card";
   import PlainText from '$lib/components/PlainText.svelte';
   import RichText from '$lib/components/RichText.svelte';
   import { fetchJSON } from '$lib/util';
@@ -193,9 +194,10 @@
 </WebsiteHeader>
 
 <div>
-  <div class="max-w-screen-md mx-auto px-0 pt-0 sm:pt-10">
+  <div class="max-w-screen-md mx-auto px-0 pt-0">
 
-    <div class="border rounded-xl shadow p-10 pb-20">
+    <div class="border rounded-b-xl shadow drop-shadow-2xl p-10 pb-20
+                hover:shadow-xl transition-shadow">
 
       <NotEditable>
         <svg
@@ -220,15 +222,41 @@
 </div>
 
 <div class="border-gray-100 border-b-2 pt-5 md:pt-5">
-  <div class="max-w-screen-md mx-auto px-6">
+  <div class="max-w-screen-md mx-auto">
     <div class="relative">
 <!--      <div class="w-1 bg-gray-900 absolute inset-0 -top-8 bottom-12 mx-auto z-0">-->
 <!--        <div class="w-4 h-4 rounded-full bg-gray-900 absolute -top-1 -left-[6px]" />-->
 <!--      </div>-->
-      <div class="z-10">
-        <IntroStep hardLink={ROUTES.cv} bind:intro={introCV} />
-        <IntroStep hardLink={ROUTES.musique} bind:intro={introMSQ} />
-        <IntroStep hardLink={ROUTES.realisations} bind:intro={introREAL} />
+      <div class="flex flex-col justify-evenly z-10 space-y-3
+                  md:flex-row md:space-x-3 md:space-y-0">
+        <IntroStep hardLink={ROUTES.cv} bind:contenu={introCV} >
+          <Image class="mx-auto block rounded-md w-1/3 h-1/3
+                        md:w-full md:h-full"
+                 maxHeight="250"
+                 maxWidth="250"
+                 bind:src={bioPicture}
+                 alt="miniature évènement"
+          />
+        </IntroStep>
+
+        <IntroStep hardLink={ROUTES.musique} bind:contenu={introMSQ} >
+          <Image class="mx-auto block rounded-md w-1/3 h-1/3
+                        md:w-full md:h-full"
+                 maxHeight="250"
+                 maxWidth="250"
+                 bind:src={bioPicture}
+                 alt="miniature évènement"
+          />
+        </IntroStep>
+
+        <IntroStep hardLink={ROUTES.realisations} bind:contenu={introREAL} >
+          <Image class="intro-card-image"
+                 maxHeight="250"
+                 maxWidth="250"
+                 bind:src={bioPicture}
+                 alt="miniature évènement"
+          />
+        </IntroStep>
 <!--        <IntroStep bind:intro={introStep4} />-->
       </div>
     </div>
