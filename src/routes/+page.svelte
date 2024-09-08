@@ -267,7 +267,7 @@
 <!--        />-->
 <!--      </div>-->
 <!--    </div>-->
-    <div class="text-center mb-32">
+    <div class="text-center mt-32">
       <PrimaryButton
         size="lg"
         type="button"

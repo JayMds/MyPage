@@ -12,7 +12,7 @@
 </script>
 
 <button on:click={navLink} tabindex="0" class="group transition-colors">
-    <Card.Root class="group-hover:shadow-2xl transition-shadow group-hover:animate-pulse ">
+    <Card.Root class="group-hover:shadow transition-shadow group-hover:animate-pulse ">
 <!--    Header    -->
         <Card.Header>
             <Card.Title class=" transition-colors">
