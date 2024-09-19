@@ -2,12 +2,13 @@
 import PlainText from "../PlainText.svelte";
 import Image from "$lib/components/Image.svelte";
 export let resume
+export let prctWidth
 
 let metier = "Concepteur Développeur d'Application"
 let resume_pic = '/images/resume_pic_400x450.webp'
 </script>
 
-<div class="flex flex-col items-center bg-black rounded-3xl h-fit w-[50%] p-8">
+<div class="flex flex-col items-center bg-black rounded-3xl h-fit w-fit p-8">
 
    <Image
            class="block w-64 bg-white rounded-3xl "

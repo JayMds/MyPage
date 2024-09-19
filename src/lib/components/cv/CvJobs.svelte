@@ -13,9 +13,8 @@ let content = "Au sein d'une équipe pluridisciplinaire composée d'un DBA, d'un
     "."
 </script>
 
-<div class="flex flex-col items-center bg-stone-300 rounded-3xl w-[50%] p-8">
+<div class="flex flex-col items-center bg-stone-300 rounded-3xl p-8">
     <div class="text-center mb-[40px]" >
         <RichText bind:content={content} />
-
     </div>
 </div>

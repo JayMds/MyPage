@@ -83,10 +83,14 @@
         </h1>
 <!--        <div class="prose md:prose-xl pb-12 sm:pb-24">-->
         <div class="flex flex-row">
-            <CvResume bind:resume={resume_section}/>
-            <CvJobs />
+            <div class="w-1/2">
+                <CvResume bind:resume={resume_section}/>
+            </div>
+            <div class="w-1/2">
+                <CvJobs />
+            </div>
 <!--            <RichText multiLine bind:content={imprint} />-->
-        </div>
+        </div>"
     </div>
 </div>
 

@@ -267,7 +267,7 @@
 <!--        />-->
 <!--      </div>-->
 <!--    </div>-->
-    <div class="text-center mt-32">
+    <div class="text-center my-16">
       <PrimaryButton
         size="lg"
         type="button"
@@ -354,13 +354,13 @@
 </div>
 
 <!-- FAQs -->
-<div class="bg-white">
-  <div class="max-w-screen-md mx-auto px-6">
-    <div class="font-bold text-sm sm:text-base pt-12 sm:pt-24 -mb-6 md:-mb-12">FAQs</div>
-    <div class="prose md:prose-xl pb-12 sm:pb-24">
-      <RichText multiLine bind:content={faqs} />
-    </div>
-  </div>
-</div>
+<!--<div class="bg-white">-->
+<!--  <div class="max-w-screen-md mx-auto px-6">-->
+<!--    <div class="font-bold text-sm sm:text-base pt-12 sm:pt-24 -mb-6 md:-mb-12">FAQs</div>-->
+<!--    <div class="prose md:prose-xl pb-12 sm:pb-24">-->
+<!--      <RichText multiLine bind:content={faqs} />-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 <Footer counter="/" />
