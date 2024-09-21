@@ -12,7 +12,8 @@
 
     export let data;
     const PAGE_TITLE = 'Curriculum Vitae'
-    let resume_section
+    let owner_data
+    
     let showUserMenu = false,
         title,
         imprint;
@@ -38,7 +39,7 @@
             // ]
             //     .map(text => `<p>${text}</p>`)
             //     .join('\n');
-        resume_section = OWNER_DATA
+        owner_data = OWNER_DATA
         $isEditing = false
     }
 
@@ -82,12 +83,12 @@
             <PlainText bind:content={title} />
         </h1>
 <!--        <div class="prose md:prose-xl pb-12 sm:pb-24">-->
-        <div class="flex flex-row">
+        <div class="flex flex-row space-x-3">
             <div class="w-1/2">
-                <CvResume bind:resume={resume_section}/>
+                <CvResume bind:resume={owner_data}/>
             </div>
             <div class="w-1/2">
-                <CvJobs />
+                <CvJobs bind:content={owner_data.cvjobs}/>
             </div>
 <!--            <RichText multiLine bind:content={imprint} />-->
         </div>"
